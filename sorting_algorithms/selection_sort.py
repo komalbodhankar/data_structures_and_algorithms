@@ -17,7 +17,6 @@ def selectionSort(array):
         # clever way to swap
         array[i] , array[min_idx] = array[min_idx], array[i]
     return array
-    
 
 result = selectionSort([7, 21, 3, 2, 0, -1, -30])
 print(result)

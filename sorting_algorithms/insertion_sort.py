@@ -21,18 +21,3 @@ def insertion_sort(array):
 
 result = insertion_sort([5,4,3,2,1])
 print(result)
-
-result = insertion_sort([167, 246, 30, 779, 833])
-print(result)
-
-result = insertion_sort([439, 294, 624, 44, 618])
-print(result)
-
-result = insertion_sort([769, 193, 787, 642, 651])
-print(result)
-
-# def sort(idx1, idx2, array):
-#     temp = array[idx1]
-#     array[idx1] = array[idx2]
-#     array[idx2] = temp
-#     return array
