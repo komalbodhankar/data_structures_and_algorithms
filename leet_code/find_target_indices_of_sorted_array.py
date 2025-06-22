@@ -13,7 +13,7 @@ import sys
 import os
 sys.path.append(os.path.abspath('..'))
 
-from insertion_sort import insertion_sort
+from algorithms.sorting.insertion_sort import insertion_sort
 
 
 def targetIndices(nums: List[int], target: int) -> List[int]:

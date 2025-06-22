@@ -19,3 +19,11 @@ def insertion_sort(array):
         
     return array
 
+result = insertion_sort([167, 246, 30, 779, 833])
+print(result)
+
+result = insertion_sort([439, 294, 624, 44, 618])
+print(result)
+
+result = insertion_sort([769, 193, 787, 642, 651])
+print(result)
