@@ -12,7 +12,8 @@ def linear_search(array, target):
         if array[i] == target:
             return numberOfTries
         numberOfTries+=1
-    return numberOfTries
+    return -1 # Element was not found
+        
 
-result = linear_search([3,17,4,33,5,6,11], 6)
+result = linear_search([3,17,4,33,5,6,11], 10)
 print(result)
