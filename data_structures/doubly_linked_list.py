@@ -193,9 +193,7 @@ class LinkedList:
             print("List is empty")
             return False
         else:
-            curr_node = self.head
-            while curr_node.next is not None:
-                curr_node = curr_node.next
+            curr_node = self.tail
             while curr_node is not None:
                 print(curr_node.data, end=" <-> " if curr_node.prev else " <-> None\n")
                 curr_node = curr_node.prev
