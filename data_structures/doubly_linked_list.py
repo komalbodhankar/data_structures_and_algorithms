@@ -172,7 +172,7 @@ class LinkedList:
     
     def search(self, data):
         curr_node = self.head
-        while curr_node is not None and curr_node.data is not data:
+        while curr_node is not None and curr_node.data != data:
             curr_node = curr_node.next
         return curr_node
 
