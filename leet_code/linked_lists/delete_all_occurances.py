@@ -11,12 +11,14 @@ def delete_all_occurances(llist: LinkedList, value):
     while curr_node is not None:
         if curr_node.data == value:
             if prev_node is None:
+                # Deleting the head
                 llist.head = curr_node.next
             else:
+                # Map previous's next with current's next
                 prev_node.next = curr_node.next
-        prev_node = curr_node
-        curr_node = curr_node.next
-    return llist.head
+        prev_node = curr_node # After each iteration, update prev node
+        curr_node = curr_node.next # Iterate to next node
+    return llist.head # Return the resulting linked list
 print("\n___________________________________")
 print("\nCreating a new blank linked list")
 llist = LinkedList()
