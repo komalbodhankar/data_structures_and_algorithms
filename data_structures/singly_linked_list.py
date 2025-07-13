@@ -152,7 +152,32 @@ class LinkedList:
                 temp_node = temp_node.next
             print(temp_node.data, end=" -> None")
             return True
-        
+    
+    def reverse(self):
+        if (self.isEmpty()):
+            print("List is empty")
+            return False
+        else:
+            # Initialize 3 pts prev, next and curr. Prev and next will be None.
+            prev_node = None
+            curr_node = self.head
+            next_node = None
+            
+            # As we want to traverse through each and every element in the linked list
+            # We cannot use curr_node.next is not None condition, as it will skip the last element
+            while curr_node is not None:
+                # Point next node to curr's next
+                next_node = curr_node.next
+                # Point curr's next to prev node
+                # **** This reverses the link ****
+                curr_node.next = prev_node
+                
+                # Point prev to curr and curr to next to iterate through the linked list
+                prev_node = curr_node
+                curr_node = next_node
+            
+            # After all nodes are traversed, point head to prev_node.
+            self.head = prev_node
 
 llist = LinkedList()
 llist.print_linked_list()
@@ -186,5 +211,9 @@ llist.print_linked_list()
 print("\nSearch element 11 in linkedList")
 result = llist.search(11)
 print(f"Search result: {result.data if result else 'Not found'}")
+
+print("\nReverse the linked list and print")
+llist.reverse()
+llist.print_linked_list()
 
                 
