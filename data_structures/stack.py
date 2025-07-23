@@ -1,48 +1,71 @@
 # Example on how arrays work in python!
 # Python's list has a default behavior of that of a stack!
-def isStackEmpty(s: list):
-    if len(s) == 0:
-        return True
-    else:
-        return False
+class MyStack:
+    def __init__(self):
+        self.stack = []
+        self.size = 0
+    
+    def isEmpty(self):
+        return self.size == 0 
 
-def push(s: list, element: int, maxSize: int):
-    if len(s) == maxSize:
-        return "Stack overflow"
-    else:
-        s.append(element)
+    def push(self, element: int, maxSize: int):
+        if self.size == maxSize:
+            print("Stack overflow")
+            return
+        self.size += 1
+        self.stack.append(element)
 
-def pop(s: list):
-    if isStackEmpty(s):
-        return "Stack underflow"
-    else:
-        s.pop()
+    def pop(self):
+        if self.isEmpty():
+            print("Stack underflow")
+            return
+        self.size -= 1
+        return self.stack.pop()
+
+    def peek(self):
+        if self.isEmpty():
+            return None 
+        return self.stack[-1]
+    
+    def size(self):
+        return self.size()
+    
+    def print(self):
+        if self.isEmpty():
+            print("Stack is empty")
+        print(self.stack)
 
 
 # Testing stack
-stack = []
+stack = MyStack()
 
 # Push elements upto maxSize
-push(stack, 1, 3)
-push(stack, 2, 3)
-push(stack, 3, 3)
+print("\nPushing elements into the stack")
+stack.push(1, 3)
+stack.push(2, 3)
+stack.push(3, 3)
 
-print(stack)
+print("\nPrint the stack")
+stack.print()
+
+# Compute stack size
+print("Size of the stack is: ", stack.size)
 
 # Push element beyond maxSize
-res = push(stack, 4, 3)
-print(res) # Stack overflow
+print("\nPush another element past maxlimit")
+stack.push(4, 3)
 
 # Pop all elements from stack
-pop(stack)
-pop(stack)
-pop(stack)
+stack.pop()
+stack.pop()
+stack.pop()
 
 # Validate if it is empty
-isEmpty = isStackEmpty(stack)
+print("\nPrint if stack is empty")
+isEmpty = stack.isEmpty()
 print(isEmpty)
 
 # Try popping an empty stack
-res2 = pop(stack)
-print(res2) # Stack underflow
+print("\nTry to pop an empty stack")
+stack.pop()
 
