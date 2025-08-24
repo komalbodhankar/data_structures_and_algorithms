@@ -1,50 +1,53 @@
-def isQueueEmpty(q: list):
-    if len(q) == 0:
-        return True
-    else:
-        return False
+class MyQueue:
+    def __init__(self):
+        self.queue = []
+        self.start = 0
+        self.end = 0
     
+    def isEmpty(self):
+        return len(self.queue) == 0
 
-def enqueue(q: list, element: int, maxSize: int):
-    if len(q) == maxSize:
-        return "Stack overflow"
-    else:
-        q.append(element)
+    def enqueue(self, element: int, maxSize: int):
+        if len(self.queue) == maxSize:
+            return "Stack overflow"
+        else:
+            self.end += 1
+            self.queue.append(element)
 
-def dequeue(q: list):
-    if isQueueEmpty(q):
-        return "Stack underflow"
-    else:
-        q.pop(0)
-        
+    def dequeue(self):
+        if self.isEmpty():
+            return "Stack underflow"
+        else:
+            self.queue.pop(0)
+            
 
-# Testing queue
-queue = []
+print("Enqueue elements into queue with maxSize 3...")
+queue = MyQueue()
 
-enqueue(queue, 1, 3)
-enqueue(queue, 2, 3)
-enqueue(queue, 3, 3)
+queue.enqueue(1, 3)
+queue.enqueue(2, 3)
+queue.enqueue(3, 3)
 
-print(queue)
+print(str(queue.queue) + "\n")
 
-# Enqueue element beyond maxSize
-res = enqueue(queue, 4, 3)
-print(res)
-
-# Dequeue elements from queue
-
-dequeue(queue)
-print(queue)
-dequeue(queue)
-print(queue)
-dequeue(queue)
-print(queue)
+print("Enqueue element beyond maxSize...")
+res = queue.enqueue(4, 3)
+print(str(res) + "\n")
 
 
-# Validate if queue is empty
-isEmpty = isQueueEmpty(queue)
-print(isEmpty)
+print("Dequeue elements from queue...")
+queue.dequeue()
+print(str(queue.queue))
+queue.dequeue()
+print(str(queue.queue))
+queue.dequeue()
+print(str(queue.queue) + "\n")
 
-# Try Dequeuing from an empty queue
-res2 = dequeue(queue)
-print(res2)
+
+print("Validate if queue is empty...")
+isEmpty = queue.isEmpty()
+print(str(isEmpty) + "\n")
+
+print("Try Dequeuing from an empty queue...")
+res2 = queue.dequeue()
+print(str(res2) + "\n")

@@ -98,7 +98,7 @@ class LinkedList:
         
         # Check if linkedList has only one element
         if curr_node.next is None:
-            llist.head = None
+            self.head = None
             return 
 
         # Iterate until the second-last element in the linkedList
@@ -179,41 +179,44 @@ class LinkedList:
             # After all nodes are traversed, point head to prev_node.
             self.head = prev_node
 
-llist = LinkedList()
-llist.print_linked_list()
+# When a Python file is run directly, the interpreter sets a built-in variable called __name__ to "__main__".
+# So this condition: evaluates to True only if the file is being run directly (not imported as a module).
+if __name__ == "__main__":
+    sll = LinkedList()
+    sll.print_linked_list()
 
-print("Inserting values into linked list at tail")
-for i in range(1,10):
-    llist.insert_at_tail(i)
-llist.print_linked_list()
+    print("Inserting values into linked list at tail")
+    for i in range(1,10):
+        sll.insert_at_tail(i)
+    sll.print_linked_list()
 
-print("\nInserting 2 in the middle")
-llist.insert_at_position(2, 7)
-llist.print_linked_list()
+    print("\nInserting 2 in the middle")
+    sll.insert_at_position(2, 7)
+    sll.print_linked_list()
 
-print("\nInserting values into linked list at head")
-for i in range(1,10):
-    llist.insert_at_head(i)
-llist.print_linked_list()
+    print("\nInserting values into linked list at head")
+    for i in range(1,10):
+        sll.insert_at_head(i)
+    sll.print_linked_list()
 
-print("\nDelete tail element")
-llist.delete_at_tail()
-llist.print_linked_list()
+    print("\nDelete tail element")
+    sll.delete_at_tail()
+    sll.print_linked_list()
 
-print("\nDelete element at position 1")
-llist.delete_at_position(1)
-llist.print_linked_list()
+    print("\nDelete element at position 1")
+    sll.delete_at_position(1)
+    sll.print_linked_list()
 
-print("\nDelete element at position 16")
-llist.delete_at_position(16)
-llist.print_linked_list()
+    print("\nDelete element at position 16")
+    sll.delete_at_position(16)
+    sll.print_linked_list()
 
-print("\nSearch element 11 in linkedList")
-result = llist.search(11)
-print(f"Search result: {result.data if result else 'Not found'}")
+    print("\nSearch element 11 in linkedList")
+    result = sll.search(11)
+    print(f"Search result: {result.data if result else 'Not found'}")
 
-print("\nReverse the linked list and print")
-llist.reverse()
-llist.print_linked_list()
+    print("\nReverse the linked list and print")
+    sll.reverse()
+    sll.print_linked_list()
 
-                
+                    

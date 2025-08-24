@@ -12,6 +12,9 @@ class LinkedList:
     def get_head(self):
         return self.head
     
+    def get_tail(self):
+        return self.tail
+    
     def isEmpty(self):
         if self.head is None:
             return True
@@ -47,6 +50,7 @@ class LinkedList:
         # Check if linkedList is empty before iterating
         if self.isEmpty():
             self.head = new_node
+            self.tail = new_node
         else:
             # Take advantage of self.tail, 
             # as it reduces one while loop of traversing to the end of linked list
@@ -199,49 +203,50 @@ class LinkedList:
                 curr_node = curr_node.prev
             return True
         
-    
+# When a Python file is run directly, the interpreter sets a built-in variable called __name__ to "__main__".
+# So this condition: evaluates to True only if the file is being run directly (not imported as a module).
+if __name__ == "__main__":  
+    dll = LinkedList()
+    dll.print_linked_list()
 
-llist = LinkedList()
-llist.print_linked_list()
+    print("\nInserting values into linked list at head")
+    for i in range(1,6):
+        dll.insert_at_head(i)
+    dll.print_linked_list()
 
-print("\nInserting values into linked list at head")
-for i in range(1,6):
-    llist.insert_at_head(i)
-llist.print_linked_list()
+    print("\nInserting values into linked list at tail")
+    for i in range(6,11):
+        dll.insert_at_tail(i)
+    dll.print_linked_list()
 
-print("\nInserting values into linked list at tail")
-for i in range(6,11):
-    llist.insert_at_tail(i)
-llist.print_linked_list()
+    print("\nInserting values 11 and 6 at positions 11 and 1 respectively")
+    dll.insert_at_position(11, 11)
+    dll.insert_at_position(6,1)
+    dll.print_linked_list()
 
-print("\nInserting values 11 and 6 at positions 11 and 1 respectively")
-llist.insert_at_position(11, 11)
-llist.insert_at_position(6,1)
-llist.print_linked_list()
+    print("\nReversed linked list")
+    dll.print_reversed_list()
 
-print("\nReversed linked list")
-llist.print_reversed_list()
+    print("\nDelete element from head")
+    dll.delete_at_head()
+    dll.print_linked_list()
 
-print("\nDelete element from head")
-llist.delete_at_head()
-llist.print_linked_list()
+    print("\nDelete element from tail")
+    dll.delete_at_tail()
+    dll.print_linked_list()
 
-print("\nDelete element from tail")
-llist.delete_at_tail()
-llist.print_linked_list()
+    print("\nInserting values 12 at position 6")
+    dll.insert_at_position(12, 6)
+    dll.print_linked_list()
 
-print("\nInserting values 12 at position 6")
-llist.insert_at_position(12, 6)
-llist.print_linked_list()
+    print("\nSearch element 12 in linkedList")
+    result = dll.search(12)
+    print(f"Search result: {f'{result.data} exists' if result else 'Not found'}")
 
-print("\nSearch element 12 in linkedList")
-result = llist.search(12)
-print(f"Search result: {f'{result.data} exists' if result else 'Not found'}")
+    print("\nDelete element from position 6")
+    dll.delete_at_position(6)
+    dll.print_linked_list()
 
-print("\nDelete element from position 6")
-llist.delete_at_position(6)
-llist.print_linked_list()
-
-print("\nSearch element 12 in linkedList")
-result = llist.search(12)
-print(f"Search result: {f'{result.data} exists' if result else 'Not found'}")
+    print("\nSearch element 12 in linkedList")
+    result = dll.search(12)
+    print(f"Search result: {f'{result.data} exists' if result else 'Not found'}")

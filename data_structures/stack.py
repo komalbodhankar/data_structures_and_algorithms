@@ -1,5 +1,6 @@
 # Example on how arrays work in python!
 # Python's list has a default behavior of that of a stack!
+# Python has a built-in package named 'Stack' which also solves the same purpose
 class MyStack:
     def __init__(self):
         self.stack = []
