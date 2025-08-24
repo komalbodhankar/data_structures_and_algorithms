@@ -28,11 +28,12 @@ def kadane_algorithm_method2(numbers):
         global_max = max(curr_max, global_max)
     return global_max
 
-# Test cases
-numbers = [-2,1,-3,4,-1,2,1,-5,4]
-maxSum = kadane_algorithm_method1(numbers)
-print(f'Maximum sum of numbers={numbers} is: {maxSum} using method1')
+if __name__ == "__main__":
+    # Test cases
+    numbers = [-2,1,-3,4,-1,2,1,-5,4]
+    maxSum = kadane_algorithm_method1(numbers)
+    print(f'Maximum sum of numbers={numbers} is: {maxSum} using method1')
 
-numbers = [-2,1,-3,4,1,-1,2,1,-3,4,-2,-5]
-maxSum = kadane_algorithm_method2(numbers)
-print(f'Maximum sum of numbers={numbers} is: {maxSum} using method2')
+    numbers = [-2,1,-3,4,1,-1,2,1,-3,4,-2,-5]
+    maxSum = kadane_algorithm_method2(numbers)
+    print(f'Maximum sum of numbers={numbers} is: {maxSum} using method2')

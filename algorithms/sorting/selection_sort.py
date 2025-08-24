@@ -18,5 +18,8 @@ def selectionSort(array):
         array[i] , array[min_idx] = array[min_idx], array[i]
     return array
 
-result = selectionSort([7, 21, 3, 2, 0, -1, -30])
-print(result)
+if __name__ == "__main__":
+    array=[7, 21, 3, 2, 0, -1, -30]
+    print(f"\nSelection sort for array: {array}")
+    result = selectionSort(array)
+    print(f"is: {result}")

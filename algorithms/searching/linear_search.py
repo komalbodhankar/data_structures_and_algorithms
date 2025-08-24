@@ -15,5 +15,10 @@ def linear_search(array, target):
     return -1 # Element was not found
         
 
-result = linear_search([3,17,4,33,5,6,11], 10)
-print(result)
+if __name__ == "__main__":
+    array = [3,17,4,33,5,6,11]
+    print(f"Initialize an array: {array}")
+    find_element = 10
+    print(f"Find the element: {find_element}")
+    result = linear_search(array, find_element)
+    print(f"Return hops needed to find, else -1: {result}")

@@ -9,5 +9,8 @@ def reverse_insertion_sort(array):
             
     return array
 
-result = reverse_insertion_sort([1,2,3,4,5])
-print(result)
+if __name__ == "__main__":
+    array=[1,2,3,4,5]
+    print(f"\nReverse insertion sort for array: {array}")
+    result = reverse_insertion_sort(array)
+    print(f"is: {result}")
