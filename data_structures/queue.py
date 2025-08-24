@@ -20,34 +20,35 @@ class MyQueue:
         else:
             self.queue.pop(0)
             
+# When a Python file is run directly, the interpreter sets a built-in variable called __name__ to "__main__".
+# So this condition: evaluates to True only if the file is being run directly (not imported as a module).
+if __name__ == "__main__":
+    queue = MyQueue()
+    
+    print("Enqueue elements into queue with maxSize 3...")
+    queue.enqueue(1, 3)
+    queue.enqueue(2, 3)
+    queue.enqueue(3, 3)
+    print(str(queue.queue) + "\n")
 
-print("Enqueue elements into queue with maxSize 3...")
-queue = MyQueue()
-
-queue.enqueue(1, 3)
-queue.enqueue(2, 3)
-queue.enqueue(3, 3)
-
-print(str(queue.queue) + "\n")
-
-print("Enqueue element beyond maxSize...")
-res = queue.enqueue(4, 3)
-print(str(res) + "\n")
-
-
-print("Dequeue elements from queue...")
-queue.dequeue()
-print(str(queue.queue))
-queue.dequeue()
-print(str(queue.queue))
-queue.dequeue()
-print(str(queue.queue) + "\n")
+    print("Enqueue element beyond maxSize...")
+    res = queue.enqueue(4, 3)
+    print(str(res) + "\n")
 
 
-print("Validate if queue is empty...")
-isEmpty = queue.isEmpty()
-print(str(isEmpty) + "\n")
+    print("Dequeue elements from queue...")
+    queue.dequeue()
+    print(str(queue.queue))
+    queue.dequeue()
+    print(str(queue.queue))
+    queue.dequeue()
+    print(str(queue.queue) + "\n")
 
-print("Try Dequeuing from an empty queue...")
-res2 = queue.dequeue()
-print(str(res2) + "\n")
+
+    print("Validate if queue is empty...")
+    isEmpty = queue.isEmpty()
+    print(str(isEmpty) + "\n")
+
+    print("Try Dequeuing from an empty queue...")
+    res2 = queue.dequeue()
+    print(str(res2) + "\n")

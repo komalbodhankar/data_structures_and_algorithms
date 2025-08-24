@@ -36,37 +36,40 @@ class MyStack:
             print("Stack is empty")
         print(self.stack)
 
+# When a Python file is run directly, the interpreter sets a built-in variable called __name__ to "__main__".
+# So this condition: evaluates to True only if the file is being run directly (not imported as a module).
+if __name__ == "__main__":
+    
+    # Testing stack
+    stack = MyStack()
 
-# Testing stack
-stack = MyStack()
+    # Push elements upto maxSize
+    print("\nPushing elements into the stack")
+    stack.push(1, 3)
+    stack.push(2, 3)
+    stack.push(3, 3)
+    print("\nPrint the stack")
+    stack.print()
 
-# Push elements upto maxSize
-print("\nPushing elements into the stack")
-stack.push(1, 3)
-stack.push(2, 3)
-stack.push(3, 3)
+    # Compute stack size
+    print("Size of the stack is: ", stack.size)
 
-print("\nPrint the stack")
-stack.print()
+    # Push element beyond maxSize
+    print("\nPush another element past maxlimit")
+    stack.push(4, 3)
 
-# Compute stack size
-print("Size of the stack is: ", stack.size)
+    # Pop all elements from stack
+    print("\nPopping all elements from stack...")
+    stack.pop()
+    stack.pop()
+    stack.pop()
 
-# Push element beyond maxSize
-print("\nPush another element past maxlimit")
-stack.push(4, 3)
+    # Validate if it is empty
+    print("\nPrint if stack is empty")
+    isEmpty = stack.isEmpty()
+    print(isEmpty)
 
-# Pop all elements from stack
-stack.pop()
-stack.pop()
-stack.pop()
-
-# Validate if it is empty
-print("\nPrint if stack is empty")
-isEmpty = stack.isEmpty()
-print(isEmpty)
-
-# Try popping an empty stack
-print("\nTry to pop an empty stack")
-stack.pop()
+    # Try popping an empty stack
+    print("\nTry to pop an empty stack")
+    stack.pop()
 
